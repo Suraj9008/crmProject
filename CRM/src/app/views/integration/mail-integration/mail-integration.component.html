@@ -1,0 +1,65 @@
+<div class="container-lg card">
+    <div class="row">
+        <div class="card-header">
+            <h3>Mail Integration</h3>
+        </div>
+        <div class="col-md-10 mx-auto">
+            <div class="contact-form card-body">
+                <form>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Primary SMTP Server</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp1" placeholder="">
+                            <small id="emailHelp1" class="form-text text-muted">The host name or IP address of your
+                                primary SMTP server</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail2">Backup SMTP Server</label>
+                            <input type="text" class="form-control" id="exampleInputEmail2"
+                                aria-describedby="emailHelp2" placeholder="">
+                            <small id="emailHelp2" class="form-text text-muted">Optional host name or IP address of
+                                Backup server, If Primary server fails. You may override the default port below ny
+                                appending it to the host name by a colon. Example: loacalhost:4200 </small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail3">SMTP Port</label>
+                            <input type="text" class="form-control w-25" id="exampleInputEmail3"
+                                aria-describedby="emailHelp3" placeholder="25">
+                            <small id="emailHelp3" class="form-text text-muted">The standard SMPT port is 25. Secure
+                                connections (including Google Mail), typically use 587.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputSubject">Use Secure Protocol</label>
+                            <select class="form-select w-25" aria-label="Default select example">
+                                <option selected>Yes</option>
+                                <option value="No">No</option>
+                              </select>
+                              <small id="emailHelp3" class="form-text text-muted">Whether to use an encrypted connection to connected to the SMTP server.</small>
+                        </div>
+                        <div class="card-header">
+                            <div class="card-body">
+                                <legend>SMTP AUTHENTICATION</legend>
+                                <small id="emailHelp3" class="form-text text-muted">Leave both fields empty, if your SMTP server does not require authentication</small>
+                                <div class="form-group">
+                                    <label for="inputMessage">Username</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp1" placeholder="ocied.asgas_jjsfyj">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputMessage">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp1" placeholder="password">
+                                <small id="emailHelp3" class="form-text text-muted">Leave empty if you do not insted to change the current password</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group pt-3">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

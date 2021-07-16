@@ -1,0 +1,74 @@
+<div class="example-header table-title row mt-4">
+    <div class="col-lg-3">
+      <h2>Loan Logs</h2>
+  </div>
+    <div class="col-lg-3">
+    </div>
+      <div class="col-lg-6">
+        <a class="btn btn-danger" data-toggle="modal"><i class="fa fa-trash-o" aria-hidden="true"></i> <span>Delete</span></a>
+        <a routerLink="/company/add-company" class="btn btn-success" data-toggle="modal"><i class="fa fa-plus" aria-hidden="true"></i><span>Add New Company</span></a>
+        <div class="col-lg-6">
+          <input class="form-control" (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+        </div>
+      </div>
+  </div>
+  
+  <div class="example-container mat-elevation-z8">
+  
+    <mat-table [dataSource]="dataSource" matSort>
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> <b> ID </b></mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+      </ng-container>
+  
+      <!-- Progress Column -->
+      <ng-container matColumnDef="contactName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> <b>Name</b> </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.clientName}}% </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> <b> Email </b> </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.mail}} </mat-cell>
+      </ng-container>
+  
+      <!-- Color Column -->
+      <ng-container matColumnDef="content">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> <b> EMI Amount Range </b> </mat-header-cell>
+        <mat-cell *matCellDef="let row" [style.color]="row.content"> {{row.EMIamountrange}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="date">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> <b> Date </b> </mat-header-cell>
+        <mat-cell *matCellDef="let row" [style.color]="row.date"> {{row.date}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> <b> Number of EMI Schemes </b> </mat-header-cell>
+        <mat-cell *matCellDef="let row" [style.color]="row.status"> {{row.NumberofEMIschemes}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> <b> Action </b> </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <a class="btn btn-success" data-toggle="modal"><i class="fa fa-pencil-square-o text-light" aria-hidden="true"></i></a>
+          &nbsp;&nbsp;
+          <a class="btn btn-danger" data-toggle="modal"><i class="fa fa-trash-o text-light" aria-hidden="true"></i></a> 
+        </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;">
+      </mat-row>
+    </mat-table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  </div>
+  
+  
+  <!-- Copyright 2018 Google Inc. All Rights Reserved.
+      Use of this source code is governed by an MIT-style license that
+      can be found in the LICENSE file at http://angular.io/license -->

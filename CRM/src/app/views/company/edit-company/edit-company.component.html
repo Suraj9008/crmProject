@@ -1,0 +1,831 @@
+<div class="container">
+    <h1>Add Company</h1>
+    <div id="stepper1" class="bs-stepper form-horizontal mt-3 card">
+        <div class="bs-stepper-header card-header">
+            <div class="step" data-target="#test-l-1">
+                <button class="step-trigger">
+                    <span class="bs-stepper-circle">1</span>
+                </button>
+            </div>
+            <div class="line"></div>
+            <div class="step" data-target="#test-l-2">
+                <button class="step-trigger">
+                    <span class="bs-stepper-circle">2</span>
+                </button>
+            </div>
+            <div class="line"></div>
+            <div class="step" data-target="#test-l-3">
+                <button class="step-trigger">
+                    <span class="bs-stepper-circle">3</span>
+
+                </button>
+            </div>
+            <div class="line"></div>
+            <div class="step" data-target="#test-l-4">
+                <button class="step-trigger">
+                    <span class="bs-stepper-circle">4</span>
+
+                </button>
+            </div>
+            <div class="line"></div>
+            <div class="step" data-target="#test-l-5">
+                <button class="step-trigger">
+                    <span class="bs-stepper-circle">5</span>
+                </button>
+            </div>
+        </div>
+        <div class="bs-stepper-content card-body">
+            <form (ngSubmit)="onSubmit()">
+                <div id="test-l-1" class="content mt-3">
+                    <div class="container bootstrap snippets bootdey">
+                        <h5 class="text-primary"><span class="glyphicon glyphicon-user"></span>Basic info</h5>
+                        <hr>
+                        <div class="row">
+                            <!-- edit form column -->
+                            <div class="row">
+                                <form class="row form-horizontal" role="form">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Organization Name:<span
+                                                    style="color: red;">*</span></label>
+                                            <div class="">
+                                                <input class="form-control" type="text" value=""
+                                                    placeholder="Enter Organization Name" required="required">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Legal Name:<span
+                                                    style="color: red;">*</span></label>
+                                            <div class="">
+                                                <input class="form-control" placeholder="Enter Legal Name" type="text"
+                                                    value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="control-label">Short Name:</label>
+                                            <div class="">
+                                                <input class="form-control" placeholder="Enter Short Name" type="text"
+                                                    value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 form-group">
+                                        <label class=" control-label">Code Type:</label>
+                                        <div class="ui-select">
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Select Code Type</option>
+                                                <option value="1">SIC Code</option>
+                                                <option value="2">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label class=" control-label">Business Id<span
+                                                        style="color: red;">*</span></label>
+                                                <div class="input-group mb-3">
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Enter Business Id"
+                                                        aria-label="Recipient's username"
+                                                        aria-describedby="basic-addon2">
+                                                    <div class="input-group-append">
+                                                        <span class="btn btn-primary" id="basic-addon2">+</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="personal-info mt-4">
+                                <form class="row form-horizontal" role="form">
+                                    <div class="col-lg-4 form-group">
+                                        <label class=" control-label">Key Contact Persons:<span
+                                                style="color: red;">*</span></label>
+                                        <div class="ui-select">
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected value="Supplier">-N/A-</option>
+                                                <option value="Sub-Wholesaler">Not Found</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 form-group">
+                                        <label class=" control-label">Contact Type:<span
+                                                style="color: red;">*</span></label>
+                                        <div class="ui-select">
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected value="Supplier">Supplier</option>
+                                                <option value="Sub-Wholesaler">Sub-Wholesaler</option>
+                                                <option value="Vendor">Vendor</option>
+                                                <option value="Clients">Clients</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 form-group">
+                                        <label class="control-label">Email:<span style="color: red;">*</span></label>
+                                        <div class="">
+                                            <input class="form-control" placeholder="Enter Email" type="email"
+                                                (change)="check()" value="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 form-group">
+                                        <label class=" control-label">Current Employer:&nbsp;<i
+                                                class="fa fa-question-circle" data-bs-toggle="tooltip"
+                                                data-bs-placement="right"
+                                                title="You can select an existing organization record here, OR type in the name of a new organization if this person's employer is not already in your database. However, if you want this person to share their work address with their employer AND that organization doesn't exist yet - leave this field blank and use the Shared Address feature in the Address pane below to create the employer record AND enter the employer address. The 'current employer' relationship will be automatically created for you."
+                                                aria-hidden="true"></i></label>
+                                        <div class="ui-select">
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Home</option>
+                                                <option value="1">Billing</option>
+                                                <option value="2">Main</option>
+                                                <option value="1">Other</option>
+                                                <option value="2">Work</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 mt-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckDefault">
+                                            <label class=" control-label">On Hold?&nbsp;<i class="fa fa-question-circle"
+                                                    data-bs-toggle="tooltip" data-bs-placement="right"
+                                                    title="This flag is most commonly used to mark an email address that is bouncing. If you are using the CiviMail component, emails that bounce excessively are automatically placed on hold and mailings are not sent to this address as long as it is marked hold. You can also set (or unset) this option manually - but remember that emails will not be sent to this address as long as it is marked 'On Hold'."
+                                                    aria-hidden="true"></i></label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckDefault">
+                                            <label class=" control-label">Bulk Mailings? &nbsp;<i
+                                                    class="fa fa-question-circle" data-bs-toggle="tooltip"
+                                                    data-bs-placement="right"
+                                                    title="If you are using the CiviMail component to send mailings to contacts, this field provides additional control over which email address is used. By default, CiviMail sends mail to each contact's preferred email address. If the contact has multiple locations, then the preferred email of the primary location is used. However, if the contact prefers to have CiviMail ('bulk') mailings set to an alternate email address - check the 'Use for Bulk Mailings' box next to that email address."
+                                                    aria-hidden="true"></i> </label>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="row contact mt-4">
+                                <div class="col-lg-6 personal-info">
+                                    <form class="row form-horizontal" role="form">
+                                        <!-- <div class="col-sm-2 form-group">
+                                        <label class="control-label">ext.</label>
+                                        <div class="ui-select">
+                                            <select class="form-select"
+                                                aria-label="Default select example">
+                                                <option value="+91">+91</option>
+                                                <option value="+93">+93</option>
+                                                <option value="+355">+355</option>
+                                                <option value="+213">+213</option>
+                                            </select>
+                                        </div>
+                                    </div> -->
+                                        <div class="col-lg-6 form-group">
+                                            <label class="control-label">Phone:<span
+                                                    style="color: red;">*</span></label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group mb-3">
+                                                    <button class="btn btn-outline-secondary dropdown-toggle" #mySelect
+                                                        (change)="checkext(mySelect.value)" type="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false">+91</button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="+91">+91</a></li>
+                                                        <li><a class="dropdown-item" href="+93">+93</a></li>
+                                                        <li><a class="dropdown-item" href="+264">+264</a></li>
+                                                    </ul>
+                                                    <input type="text" (change)="checkPhone()" class="form-control"
+                                                        placeholder="Enter Mobile"
+                                                        aria-label="Text input with dropdown button">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 form-group">
+                                            <label class="control-label">Contact Location</label>
+                                            <div class="ui-select">
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option value="Home">Home</option>
+                                                    <option value="Billing">Billing</option>
+                                                    <option value="Main">Main</option>
+                                                    <option value="Other">Other</option>
+                                                    <option value="Work">Work</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 form-group">
+                                            <label class="control-label">&nbsp;</label>
+                                            <div class="ui-select">
+                                                <button class="btn btn-primary">+</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-lg-6 personal-info">
+                                    <form class="row form-horizontal" role="form">
+                                        <div class="col-lg-4 form-group">
+                                            <label class="control-label">Instant Messenger:</label>
+                                            <div class="">
+                                                <input class="form-control" placeholder="Enter Url or No" type="text"
+                                                    value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 form-group">
+                                            <label class="control-label">IM Location</label>
+                                            <div class="ui-select">
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option value="Home">Home</option>
+                                                    <option value="Billing">Billing</option>
+                                                    <option value="Main">Main</option>
+                                                    <option value="Other">Other</option>
+                                                    <option value="Work">Work</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 form-group">
+                                            <label class="control-label">IM Type</label>
+                                            <div class="ui-select">
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option value="Yahoo">WhatsApp</option>
+                                                    <option value="Yahoo">Yahoo</option>
+                                                    <option value="MSN">MSN</option>
+                                                    <option value="AIM">AIM</option>
+                                                    <option value="GTalk">GTalk</option>
+                                                    <option value="Jabber">Jabber</option>
+                                                    <option value="Skype">Skype</option>
+                                                    <option value="Other">Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 form-group">
+                                            <label class="control-label">&nbsp;</label>
+                                            <div class="ui-select">
+                                                <button class="btn btn-primary">+</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <form class="" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+                                        <h6 class="">Add Social Media</h6>
+                                        <div class="col-lg-12" #socialField>
+                                            <div class="container" formArrayName="quantities">
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <div class="form-group">
+                                                            <label class=" control-label help-block form-text">Social
+                                                                Media Name</label>
+                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                <select class="form-select"
+                                                                    aria-label="Default select example">
+                                                                    <option *ngFor="let i of media">{{i.accountName}}
+                                                                    </option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-5">
+                                                        <div class="form-group">
+                                                            <label
+                                                                class=" control-label help-block form-text">Username</label>
+                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                <input type="url" class="form-control"
+                                                                    value="https://www.linkedin.com/in/lorem">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <div class="form-group p-2 mt-3">
+                                                            <button type="button" (click)="addQuantity()"
+                                                                class="btn btn-primary mt-1">Add
+                                                                More</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row"
+                                                    *ngFor="let quantity of quantities().controls; let i=index"
+                                                    [formGroupName]="i">
+                                                    <div class="col-lg-4">
+                                                        <div class="form-group">
+                                                            <label class=" control-label help-block form-text">Social
+                                                                Media Name</label>
+                                                            <div class="form-group">
+                                                                <select class="form-select"
+                                                                    aria-label="Default select example">
+                                                                    <option *ngFor="let i of media">{{i.accountName}}
+                                                                    </option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-5">
+                                                        <div class="form-group">
+                                                            <label
+                                                                class=" control-label help-block form-text">Username</label>
+                                                            <div class="col-md-10 col-sm-9 col-xs-12">
+                                                                <input type="url" class="form-control"
+                                                                    value="https://www.linkedin.com/in/lorem">
+                                                                <p class="help-block form-text">Your Social Media
+                                                                    username</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3 mt-4">
+                                                        <div class="form-group p-2">
+                                                            <button (click)="removeQuantity(i)"
+                                                                class="btn btn-danger">Remove</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="personal-info col-lg-6">
+                                    <form class="row orm-horizontal" role="form">
+                                        <div class="col-lg-10 form-group">
+                                            <label class="control-label">Website:<span
+                                                    style="color: red;">*</span></label>
+                                            <div class="">
+                                                <input class="form-control" placeholder="Enter Website Url" type="text"
+                                                    value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 form-group mt-4">
+                                            <button class="btn btn-primary mt-1">+</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="personal-info col-lg-6">
+                                    <form class="row form-horizontal" role="form">
+                                        <div class="col-lg-6 form-group">
+                                            <label class="control-label">Referral Contact:&nbsp;<i
+                                                    class="fa fa-question-circle" data-bs-toggle="tooltip"
+                                                    data-bs-placement="left"
+                                                    title="Use this field to store a description of how/why this contact was added to the database. This field is usually auto-filled when a contact is created from a public form i.e. Event Registration."
+                                                    aria-hidden="true"></i></label>
+                                            <div class="">
+                                                <input class="form-control" placeholder="Enter Referral Contact"
+                                                    type="text" value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 form-group">
+                                            <label class="control-label">Referral ID:&nbsp;<i
+                                                    class="fa fa-question-circle" data-bs-toggle="tooltip"
+                                                    data-bs-placement="left"
+                                                    title="Use this field to store a unique identifier. This is generally used to link contacts with records in a related or legacy application. When migrating data from another system, import the unique contact identifier from the old system to this field. You can then use it to match imported contributions and other transactional data to the corresponding contact record."
+                                                    aria-hidden="true"></i></label>
+                                            <div class="ui-select">
+                                                <input class="form-control" placeholder="Enter Referral ID" type="text"
+                                                    value="">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="row mt-4">
+                                <label class="control-label">Testimonials</label>
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a comment here"
+                                        style="height: 100px"></textarea>
+                                </div>
+                            </div>
+                            <div class="row browsDoc mt-4">
+                                <div class="col-lg-6 personal-info">
+                                    <form class="form-horizontal" role="form">
+                                        <div class="form-group">
+                                            <label class="control-label">Add Logo:</label>
+                                            <div class="">
+                                                <input class="form-control" type="file" value="">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-lg-6 personal-info">
+                                    <form class="form-horizontal" role="form">
+                                        <div class="form-group">
+                                            <label class="control-label">Add Professional Certificates /
+                                                Credentials/Business Card/Other</label>
+                                            <div class="">
+                                                <input class="form-control" type="file" value="">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <button (click)="next()" class="btn btn-primary mt-5 mb-3">Next</button>
+                    </div>
+                </div>
+                <div id="test-l-2" class="content">
+                    <h5 class="text-primary"><span class="glyphicon glyphicon-user"></span>Advance Info </h5>
+                    <hr>
+                    <div class="row mt-5">
+                        <form class="form-horizontal" role="form">
+                            <div class="personal-info">
+                                <form class="form-horizontal" role="form">
+                                    <div class="form-group pr-5">
+                                        <label for="exampleInputEmail1" class="form-label">
+                                            Subject</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1"
+                                            aria-describedby="emailHelp">
+                                    </div>
+                                </form>
+                            </div>
+                        </form>
+                    </div>
+                    <button (click)="next()" class="btn btn-primary mt-4">Next</button>
+                </div>
+                <div id="test-l-3" class="content">
+                    <h5 class="text-primary"><span class="glyphicon glyphicon-user"></span>
+                        Address</h5>
+                    <hr>
+                    <div class="row mt-5">
+                        <form class="form-horizontal" role="form">
+                            <label class="control-label">Address Type:<span style="color: red;">*</span></label>
+                            <div class="d-flex flex-row form-group pr-5">
+                                <div class="ui-select pr-5">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Select Address Type</option>
+                                        <option value="Home">Home</option>
+                                        <option value="Other Contact">Other Contact</option>
+                                    </select>
+                                </div>
+                                <div class="form-group pr-5 d-flex flex-row justify-content-between">
+                                    <div class="form-check pr-5">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Primary location for this contact
+                                        </label>
+                                    </div>
+                                    <div class="form-check pr-5">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Billing location for this contact
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Use another contact's address
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="personal-info">
+                                <form class="form-horizontal" role="form">
+                                    <div class="row">
+                                        <div class="col-lg-3 form-group">
+                                            <label class="control-label">Unit Number:<span
+                                                    style="color: red;">*</span></label>
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Enter Unit Number" type="text"
+                                                    value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 form-group">
+                                            <label class="control-label">Street Number:</label>
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Enter Street Number"
+                                                    type="text" value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 form-group">
+                                            <label class="control-label"> Street Name:<span
+                                                    style="color: red;">*</span></label>
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Enter Street Name" type="text"
+                                                    value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 form-group">
+                                            <label class="control-label">Street Type:</label>
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Enter Street Type" type="text"
+                                                    value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 form-group">
+                                            <label class="control-label">Country:<span
+                                                    style="color: red;">*</span></label>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Select Country</option>
+                                                <option value="2">USA</option>
+                                                <option value="1">India</option>
+                                                <option value="3">China</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-3 form-group">
+                                            <label class="control-label">State:<span
+                                                    style="color: red;">*</span></label>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>-N/A-</option>
+                                                <option value="1">None found</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-3 form-group">
+                                            <label class="control-label">City:<span style="color: red;">*</span></label>
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Enter City Name" type="text"
+                                                    value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 form-group">
+                                            <label class="control-label">Postal Code:<span
+                                                    style="color: red;">*</span></label>
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Enter Postal Code" type="text"
+                                                    value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-5 form-group">
+                                            <label class="control-label">Latitude, Longitude:&nbsp;<i
+                                                    class="fa fa-question-circle" data-bs-toggle="tooltip"
+                                                    data-bs-placement="right"
+                                                    title="Latitude and longitude may be automatically populated by enabling a Mapping Provider. (Refer to the Mapping and Geocoding section in the Installation and Basic Setup Chapter)"
+                                                    aria-hidden="true"></i></label>
+                                            <div class="form-group d-flex flex-row form-horizontal">
+                                                <input class="form-control" placeholder="Latitude"
+                                                    type="text">&nbsp;<input class="form-control" type="text"
+                                                    placeholder="Longitude">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5"></div>
+                                        <div class="col-lg-2 mt-5">
+                                            <button class="btn btn-primary ">Add More Address</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <hr>
+                            </div>
+                        </form>
+                    </div>
+                    <button (click)="next()" class="btn btn-primary mt-4">Next</button>
+                </div>
+                <div id="test-l-4" class="content">
+                    <h5 class="text-primary"><span class="glyphicon glyphicon-user"></span>Communication Preferences
+                    </h5>
+                    <hr>
+                    <div class="mt-5">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <div class="row form-group">
+                                    <div class="col-lg-3">
+                                        <div class="row pl-5">
+                                            <label class="control-label">Communication Style:&nbsp;<i
+                                                    class="fa fa-question-circle" data-bs-toggle="tooltip"
+                                                    data-bs-placement="right"
+                                                    title="Choose how you communicate with this contact, e.g. on formal or familiar terms.
+                                                    Depending on the CiviCRM setup, email and postal greetings (see below) may be automatically adapted accordingly; or the information can be used in other ways.."
+                                                    aria-hidden="true"></i></label>
+                                            <div class="col-lg-4 form-check">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                    id="flexRadioDefault1">
+                                                <label class="form-check-label" for="flexRadioDefault1">
+                                                    Formal
+                                                </label>
+                                            </div>
+                                            <div class="col-lg-4 form-check">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                    id="flexRadioDefault2" checked>
+                                                <label class="form-check-label" for="flexRadioDefault2">
+                                                    Informal
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 ersonal-info">
+                                        <form class="form-horizontal" role="form">
+                                            <div class="form-group">
+                                                <label class="control-label">Salutation Type:<span
+                                                        style="color: red;">*</span></label>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected>-Select Salutation Type-</option>
+                                                    <option value="1">Dear </option>
+                                                    <option value="2">Dear </option>
+                                                    <option value="3">Dear </option>
+                                                </select>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col-lg-6 personal-info">
+                                        <form class="row form-horizontal" role="form">
+                                            <div class="col-lg-4 form-group">
+                                                <label class="control-label">Privacy:<span
+                                                        style="color: red;">*</span>&nbsp;<i
+                                                        class="fa fa-question-circle" data-bs-toggle="tooltip"
+                                                        data-bs-placement="right"
+                                                        title="Select the appropriate Privacy Options.
+                                                        Contacts with 'Do not email' will be excluded from receiving CiviMail mailings, and the Send Email activity will be disabled for them. However they will still receive email for contribution receipts and event registration confirmations.
+                                                        Contacts with 'Do not SMS' will be excluded from receiving Bulk SMS messages, and the Send SMS activity will be disabled.
+                                                        Contacts with 'Do not mail' will be excluded when mailing labels are created."
+                                                        aria-hidden="true"></i></label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        name="flexRadioDefault" id="flexRadioDefault2">
+                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                        Do not Phone
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        name="flexRadioDefault" id="flexRadioDefault2">
+                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                        Do not Email
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        name="flexRadioDefault" id="flexRadioDefault2">
+                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                        Do not Mail
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        name="flexRadioDefault" id="flexRadioDefault2">
+                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                        Do not SMS
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        name="flexRadioDefault" id="flexRadioDefault2">
+                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                        Do not Trade
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 orm-group">
+                                                <div class="form-group pr-5">
+                                                    <label class="control-label">Preferred Communication
+                                                        Method:<span style="color: red;">*</span>&nbsp;<i
+                                                            class="fa fa-question-circle" data-bs-toggle="tooltip"
+                                                            data-bs-placement="right"
+                                                            title="Select the preferred method(s) of communicating with this contact."
+                                                            aria-hidden="true"></i></label>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            name="flexRadioDefault" id="flexRadioDefault1">
+                                                        <label class="form-check-label" for="flexRadioDefault1">
+                                                            Phone
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            name="flexRadioDefault" id="flexRadioDefault2">
+                                                        <label class="form-check-label" for="flexRadioDefault2">
+                                                            Email
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            name="flexRadioDefault" id="flexRadioDefault2">
+                                                        <label class="form-check-label" for="flexRadioDefault2">
+                                                            Postal Mail
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            name="flexRadioDefault" id="flexRadioDefault2">
+                                                        <label class="form-check-label" for="flexRadioDefault2">
+                                                            SMS
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            name="flexRadioDefault" id="flexRadioDefault2">
+                                                        <label class="form-check-label" for="flexRadioDefault2">
+                                                            Fax
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="personal-info pl-3">
+                                <form class="row form-horizontal" role="form">
+                                    <div class="col-lg-6 form-group">
+                                        <label class="control-label">Preferred Language:</label>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>-N/A-</option>
+                                            <option value="1">None found</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-6 form-group">
+                                        <label class="control-label">Email Format:&nbsp;<i class="fa fa-question-circle"
+                                                data-bs-toggle="tooltip" data-bs-placement="right"
+                                                title="Select the email format preferred by this contact. Select 'Both' to send HTML and Text formats."
+                                                aria-hidden="true"></i></label>
+                                        <div class="form-group">
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Both</option>
+                                                <option value="1">Html</option>
+                                                <option value="2">Text</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-check pr-5">
+                                        <input class="form-check-input" type="checkbox" name="flexRadioDefault"
+                                            id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            NO BULK EMAILS (User Opt Out)&nbsp;<i class="fa fa-question-circle"
+                                                data-bs-toggle="tooltip" data-bs-placement="right"
+                                                title="This option is designed to be set by the contact themselves when they don't want to receive bulk email from your organization (they set it using the opt-out action from a CiviMail mailing). Please think before changing it, as it will override the preference they have set."
+                                                aria-hidden="true"></i>
+                                        </label>
+                                    </div>
+                                </form>
+                            </div>
+                        </form>
+                    </div>
+                    <button (click)="next()" class="btn btn-primary mt-4">Next</button>
+                </div>
+                <div id="test-l-5" class="content">
+                    <h5 class="text-primary"><span class="glyphicon glyphicon-user"></span>Tags
+                        and Groups</h5>
+                    <hr>
+                    <div class="row mt-5">
+                        <form class="form-horizontal" role="form">
+                            <div class="personal-info">
+                                <form class="form-horizontal" role="form">
+                                    <div class="d-flex flex-row form-group pr-5">
+                                        <div class="form-group w-50">
+                                            <label for="exampleInputEmail1" class="form-label pr-3">
+                                                Tag(s)</label>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>-Select-</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group w-50">
+                                            <label for="exampleInputEmail1" class="form-label pr-3">
+                                                Group(s)</label>
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>-Select-</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group w-50">
+                                        <label for="exampleInputEmail1" class="form-label pr-3">
+                                            Reference From</label>
+                                        <div class="">
+                                            <input class="form-control" type="text" value="">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="form-group pr-3 d-flex flex-row">
+                        <div class="ui-select">
+                            <button type="button" class="btn btn-secondary mt-5">Cancle</button>
+                        </div>
+                        <div class="ui-select pl-3">
+                            <button type="submit" class="btn btn-primary mt-5">Submit Form</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="exampleModal" class="modal fade docs-example-modal-sm" tabindex="-1" role="dialog"
+    aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="d-flex justify-content-center align-items-center container">
+                <div class="card py-5 px-3">
+                    <h5 class="m-0">Mobile phone verification</h5><span class="mobile-text">Enter the code we just send
+                        on your mobile phone <b class="text-danger">+91 86684833</b></span>
+                    <div class="d-flex flex-row mt-5"><input type="text" class="form-control" autofocus=""><input
+                            type="text" class="form-control"><input type="text" class="form-control"><input type="text"
+                            class="form-control"></div>
+                    <div class="text-center mt-5"><span class="d-block mobile-text">Don't receive the code?</span><span
+                            class="font-weight-bold text-danger cursor">Resend</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

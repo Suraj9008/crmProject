@@ -1,0 +1,33 @@
+p {
+  font-family: Lato;
+}
+
+.col-lg-8 {
+  flex: 0 0 66.6666666667%;
+  max-width: 100%;
+}
+
+.select-editable {
+  position:relative;
+  width:120px;
+  height:18px;
+}
+.select-editable select {
+  position:absolute;
+  top:0px;
+  left:0px;
+  font-size:14px;
+  width:120px;
+  margin:0;
+}
+.select-editable input {
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:85px;
+  padding:1px;
+  font-size:12px;
+}
+.select-editable select:focus, .select-editable input:focus {
+  outline:none;
+}

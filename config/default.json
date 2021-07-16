@@ -1,0 +1,4 @@
+{
+    "Port": "5000",
+    "mongodbUrl": "mongodb+srv://suraj:suraj123@cluster0.p3iog.mongodb.net/crmDB?retryWrites=true&w=majority"
+}

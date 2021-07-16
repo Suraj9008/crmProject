@@ -1,0 +1,178 @@
+<div class="container">
+  <div class="view-account">
+    <section class="module">
+      <div class="module-inner">
+        <div class="content-panel">
+          <form class="form-horizontal" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+            <div class="fieldset">
+              <h3 class="fieldset-title">Personal Info</h3>
+              <div class="form-group">
+                <figure class="figure col-md-2 col-sm-3 col-xs-12">
+                  <img class="img-rounded img-responsive w-75"
+                    src="https://celeste.bold-themes.com/main-demo/wp-content/uploads/sites/3/2018/01/img-testimonials-career-04.jpg"
+                    alt="">
+
+                  <div class="form-group mt-2">
+                    <input type="file" class="file-uploader pull-left">
+                  </div>
+                </figure>
+                <div class="form-group p-2">
+                  <label class="control-label">User Name</label>
+                  <div class="">
+                    <input type="text" class="form-control" value="Rebecca">
+                  </div>
+                </div>
+                <div class="form-group  d-flex flex-row">
+                  <div class="form-group p-2 w-50">
+                    <label class="control-label">First Name</label>
+                    <div class="">
+                      <input type="text" class="form-control" value="Rebecca">
+                    </div>
+                  </div>
+                  <div class="form-group p-2 w-50">
+                    <label class="control-label">Last Name</label>
+                    <div class="">
+                      <input type="text" class="form-control" value="Sanders">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group p-2">
+              <label class="control-label">Info</label>
+              <div class="">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+            </div>
+            <div class="card-body form-group">
+              <h3 class="fieldset-title">Contact Info</h3>
+              <div class="form-group d-flex flex-row">
+                <div class="form-group">
+                    <label for="email">email</label>
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-user"></i></span>
+                    </div>
+                    <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">email is required</div>
+                    </div>
+                </div>
+                <div class="form-group p-2 w-50">
+                  <label class="control-label">Mobile</label>
+                  <div class="">
+                    <input type="text" class="form-control" value="Sanders">
+                    <p class="help-block form-text">Enter Mobile No</p>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group d-flex flex-row">
+                <div class="form-group p-2 w-50">
+                  <label class="control-label">Password</label>
+                  <div class="">
+                    <input type="password" class="form-control">
+                    <p class="help-block form-text">Enter Password</p>
+                  </div>
+                </div>
+                <div class="form-group p-2 w-50">
+                  <label class="control-label">Confirm Password</label>
+                  <div class="">
+                    <input type="password" class="form-control">
+                    <p class="help-block form-text">Enter Confirm Password</p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group">
+                  <label class="control-label">Security Questions</label>
+                  <select class="form-control">
+                      <option class="hidden"  selected disabled>Please select your Sequrity Question</option>
+                      <option>What is your Birthdate?</option>
+                      <option>What is Your old Phone Number</option>
+                      <option>What is your Pet Name?</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <input type="text" class="form-control" placeholder="`Answer *" value="" />
+              </div>
+              </div>
+            </div>
+
+            <div class="container">
+              <div class="row">
+                <h3 class="fieldset-title">Social Media</h3>
+                <div class="col-lg-12" #socialField>
+                  <div class="container" formArrayName="quantities">
+                    <div class="row">
+                      <div class="col-lg-4">
+                        <div class="form-group p-2">
+                          <label class=" control-label help-block form-text">Social Media Name</label>
+                          <div class="col-md-12 col-sm-12 col-xs-12">
+                            <select class="form-select" aria-label="Default select example">
+                              <option *ngFor="let i of media">{{i.accountName}}</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-5">
+                        <div class="form-group p-2">
+                          <label class=" control-label help-block form-text">Username</label>
+                          <div class="col-md-12 col-sm-12 col-xs-12">
+                            <input type="url" class="form-control" value="https://www.linkedin.com/in/lorem">
+                            <p class="help-block form-text">Your Social Media username</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="form-group p-2 mt-4">
+                          <button type="button" (click)="addQuantity()" class="btn btn-primary mt-1">Add
+                            More</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row" *ngFor="let quantity of quantities().controls; let i=index" [formGroupName]="i">
+                      <div class="col-lg-4">
+                        <div class="form-group pr-5">
+                          <label class=" control-label help-block form-text">Social Media Name</label>
+                          <div class="form-group">
+                            <select class="form-select" aria-label="Default select example">
+                              <option *ngFor="let i of media">{{i.accountName}}</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-5">
+                        <div class="form-group p-2">
+                          <label class=" control-label help-block form-text">Username</label>
+                          <div class="col-md-10 col-sm-9 col-xs-12">
+                            <input type="url" class="form-control" value="https://www.linkedin.com/in/lorem">
+                            <p class="help-block form-text">Your Social Media username</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="form-group p-2">
+                          <button (click)="removeQuantity(i)" class="btn btn-danger">Remove</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="form-group">
+              <div class="form-group d-flex flex-row">
+                <div class="form-group p-2">
+                  <button class="btn btn-primary">Submit</button>
+                </div>
+                <div class="form-group p-2">
+                  <button class="btn btn-danger">Cancle</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="card p-3">
+    <form class="pb-4" [formGroup]="socialMediaForm" (ngSubmit)="addSocialMedia()">
+        <legend class="mt-4 ml-3">Add Social Media Name</legend>
+        <div class="form-group">
+            <div class="form-check">
+                <label class="control-label" for="loan amount">Social Media Name</label>
+                <input class="form-control" type="text" name="loan amount" formControlName="accountName" placeholder="Enter Amount"/>
+            </div>
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <label class="control-label" for="loan amount">Description</label>
+            <input class="form-control" type="text" name="loan amount" formControlName="accountName" placeholder="Enter Amount"/>
+        </div>
+        </div>
+        <div class="form-check ml-4">
+            <input class="form-check-input" formControlName="publish" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Published
+            </label>
+          </div>
+          <div class="form-check mt-4">
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+    </form>
+</div>

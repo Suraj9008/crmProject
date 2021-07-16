@@ -1,0 +1,23 @@
+<div class="container-fluid p-5">
+    <table class="table table-striped">
+        <thead>
+          <tr class="row">
+            <th class="col-lg-9" scope="col">Name</th>
+            <th class="col-lg-3" scope="col">Operations</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr class="row" *ngFor="let term of data">
+                <td class="col-lg-9"><b>{{term.termName}}</b></td>
+                <td class="col-lg-3">
+                    <div class="ui-select">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected value="Work">List Term</option>
+                            <option value="Main">Add Term</option>
+                        </select>
+                    </div>
+                </td>
+              </tr>
+        </tbody>
+      </table>
+</div>

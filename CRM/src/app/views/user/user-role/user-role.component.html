@@ -1,0 +1,214 @@
+<!-- <div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h2>User <b>Management</b></h2>
+                    </div>
+                    <div class="col-sm-7">
+                        <a routerLink="/user/user-permission" class="btn btn-secondary"><i class="fa fa-user-plus"></i> <span>Add New User
+                                Role</span></a>
+                        <a href="#" class="btn btn-secondary"><i class="fa fa-share"></i> <span>Export to
+                                Excel</span></a>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Operations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><a href="#"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> &nbsp; Anonymous user</a></td>
+                        <td class="w-25">
+                            <select class="form-select text-nowrap w-100" aria-label="select example">
+                                <option class="text-nowrap" selected>edit</option>
+                                <option value="1">edit permissions</option>
+                            </select>
+                        </td>
+                        <td>
+                            <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i
+                                    class="fa fa-cog"></i></a>
+                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
+                                    class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><a href="#"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> &nbsp; Authontication user</a></td>
+                        <td>
+                            <select class="form-select text-nowrap w-100" aria-label="select example">
+                                <option class="text-nowrap" selected>edit</option>
+                                <option value="1">edit permissions</option>
+                            </select>
+                        </td>
+                        <td>
+                            <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i
+                                    class="fa fa-cog"></i></a>
+                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
+                                    class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><a href="#"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> &nbsp; Administrator</a></td>
+                        <td>
+                            <select class="form-select text-nowrap w-100" aria-label="select example">
+                                <option class="text-nowrap" selected>edit</option>
+                                <option value="1">Airworthiness</option>                          
+                            </select>
+                        </td>
+                        <td>
+                            <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i
+                                    class="fa fa-cog"></i></a>
+                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
+                                    class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><a href="#"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i>&nbsp; Air Safety</a></td>
+                        <td>
+                            <select class="form-select text-nowrap w-100" aria-label="select example">
+                                <option class="text-nowrap" selected>edit</option>
+                                <option value="1">edit permissions</option>                              
+                            </select>
+                        </td>
+                        <td>
+                            <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i
+                                    class="fa fa-cog"></i></a>
+                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
+                                    class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><a href="#"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i>&nbsp; Martin Sommer</a></td>
+                        <td>
+                            <select class="form-select text-nowrap w-100" aria-label="select example">
+                                <option class="text-nowrap" selected>edit</option>
+                                <option value="1">edit permissions</option>                             
+                            </select>
+                        </td>
+                        <td>
+                            <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i
+                                    class="fa fa-cog"></i></a>
+                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
+                                    class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="clearfix">
+                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+                <ul class="pagination">
+                    <li class="page-item disabled"><a href="#">Previous</a></li>
+                    <li class="page-item"><a href="#" class="page-link">1</a></li>
+                    <li class="page-item"><a href="#" class="page-link">2</a></li>
+                    <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                    <li class="page-item"><a href="#" class="page-link">4</a></li>
+                    <li class="page-item"><a href="#" class="page-link">5</a></li>
+                    <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+  
+<div class="example-header table-title row mt-4">
+    <div class="col-lg-3">
+      <h2>User Management</h2>
+  </div>
+    <div class="col-lg-3">
+    </div>
+      <div class="col-lg-6">
+        <button class="btn btn-success bg-success text-light" (click)="addRole()"><i class="fa fa-plus" aria-hidden="true"></i>Add New Role</button>
+        <div class="col-lg-8">
+          <input class="form-control" (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+        </div>
+      </div>
+  </div>
+  
+  <div class="example-container mat-elevation-z8">
+  
+    <mat-table [dataSource]="dataSource" matSort>
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> <b> ID </b></mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+      </ng-container>
+  
+      <!-- Progress Column -->
+      <ng-container matColumnDef="userName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> <b>Template Name</b> </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.userName}} </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="userRole">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> <b>Category Type</b> </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.userRole}} </mat-cell>
+      </ng-container>
+  
+      <!-- Color Column -->
+      <ng-container matColumnDef="userAddress">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> <b> Module Heading </b> </mat-header-cell>
+        <mat-cell *matCellDef="let row" [style.color]="row.phone"> {{row.userAddress}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="operation">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> <b> Operations </b> </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <a class="btn btn-success" data-toggle="modal"><i class="fa fa-pencil-square-o text-light" aria-hidden="true"></i></a>
+          &nbsp;&nbsp;
+          <a class="btn btn-danger" data-toggle="modal"><i class="fa fa-trash-o text-light" aria-hidden="true"></i></a> 
+        </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;">
+      </mat-row>
+    </mat-table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  </div>
+  
+  
+  <!-- Copyright 2018 Google Inc. All Rights Reserved.
+      Use of this source code is governed by an MIT-style license that
+      can be found in the LICENSE file at http://angular.io/license -->
+
+
+      <div id="userRole" class="modal fade docs-example-modal-sm" tabindex="-1" role="dialog"
+    aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content p-5">
+            <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Add New Role</label>
+                  <select class="form-select">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Discription</label>
+                  <textarea type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Discription"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+    </div>
+</div>

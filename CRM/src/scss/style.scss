@@ -1,0 +1,16 @@
+// If you want to override variables do it here
+@import "variables";
+
+// Import styles
+@import "~@coreui/coreui/scss/coreui";
+
+// If you want to add something do it here
+@import "custom";
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+@import '~bs-stepper/dist/css/bs-stepper.min.css';
+
+@import '../../node_modules/font-awesome/css/font-awesome.min.css';
+
+@import '../../node_modules/simple-line-icons/css/simple-line-icons.css';

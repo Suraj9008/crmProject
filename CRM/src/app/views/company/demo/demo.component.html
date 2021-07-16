@@ -1,0 +1,67 @@
+
+    <div class="container popup-overlay" *ngIf="showSpinner">
+      <circle-progress [percent]="100" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
+        [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="percent">
+      </circle-progress>
+      <p>{{percent}} Contacts Stored Successfully</p>
+      <p>{{message}}</p>
+      <button class="btn btn-primary" (click)="closeLoader()" >Close</button>
+    </div>
+
+<div class="container bg-white p-5" >
+  <div *ngIf="isExcelFile === false">
+    <p class="alert alert-danger" role="alert">This is not an Excel file</p>
+  </div>
+  <input type="file" class="form-control" #inputFile (change)="onFileChange($event)" />
+
+  <div id="output"></div>
+  <hr>
+  <form #form="ngForm">
+    <table class="table">
+      <thead>
+        <th>
+          <strong>Contact type field</strong>
+        </th>
+        <th>
+          <strong>Custom</strong>
+        </th>
+        <th>
+          <strong>Webform Field</strong>
+        </th>
+        <th>
+          <strong>Custom Text</strong>
+        </th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of addContact | keyvalue">
+          <td>
+            <input class="form-control" id="key-{{item.value}}" name="key-{{item.value}}" #key type="text"
+              [value]="item.value">
+          </td>
+          <td>
+            <div class="form-check">
+              <input (change)='toggleDisable($event,item.value)' class="form-check-input" id="check-{{item.value}}" name="check-{{item.value}}" #check
+                type="checkbox" value="" id="flexCheckDefault">
+              <label for="">Custom</label>
+            </div>
+          </td>
+          <td>
+            <select [disabled]='disableTextbox' class="form-select" id="select-{{item.value}}" name="select-{{item.value}}" #OptionValue
+              aria-label="Default select example">
+              <option selected value="">Open this select menu</option>
+              <option *ngFor="let key of JsonData.Sheet1[0] | keyvalue" [value]="key.key">{{key.key}}</option>
+            </select>
+          </td>
+          <td>
+            <div class="form-floating">
+              <textarea class="form-control" id="textarea-{{item.value}}" name="textarea-{{item.value}}" #comments
+                placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+              <label for="floatingTextarea2">Custom Data</label>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" (click)="openConfirmationDialog()" class="btn btn-primary">Save</button>
+  </form>
+</div>

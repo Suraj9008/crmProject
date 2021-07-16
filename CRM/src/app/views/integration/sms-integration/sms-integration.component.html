@@ -1,0 +1,84 @@
+<div class="container-lg card">
+    <div class="row">
+        <div class="card-header">
+            <h3>SMS Integration</h3>
+        </div>
+        <div class="col-md-10 mx-auto">
+            <div class="contact-form card-body">
+                <form>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="inputSubject">Provider</label>
+                            <select class="form-select w-25" aria-label="Default select example">
+                                <option selected>TWILIO</option>
+                                <option value="No">Msg91</option>
+                                <option value="No">TextLocal</option>
+                                <option value="No">SpringEdge</option>
+                            </select>
+                        </div>
+                        <legend>Provider Primary</legend>
+                        <div class="form-group d-flex flex-row">
+                            <div class="form-group">
+                                <label for="exampleInputEmail2">Account SID</label>
+                                <input type="text" class="form-control" id="exampleInputEmail2"
+                                    aria-describedby="emailHelp2" placeholder="Assdwadghdadhashf">
+                            </div>
+                            &nbsp;
+                            <div class="form-group">
+                                <label for="exampleInputEmail3">Auth Token</label>
+                                <input type="password" class="form-control" id="exampleInputEmail3"
+                                    aria-describedby="emailHelp3" placeholder="password">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail3">From</label>
+                            <input type="text" class="form-control w-25" id="exampleInputEmail3"
+                                aria-describedby="emailHelp3" placeholder="+91-9890359005">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail3">Host URL</label>
+                            <small id="emailHelp3" class="form-text text-muted">https://developer.mozilla.org/en-US/docs/Web/API/URL/host</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail3">Header Content Type</label>
+                            <input type="text" class="form-control w-25" id="exampleInputEmail3"
+                                aria-describedby="emailHelp3" placeholder="application/x-www-form-urlencoded">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputSubject">Use Secure Protocol</label>
+                            <select class="form-select w-25" aria-label="Default select example">
+                                <option selected>Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <small id="emailHelp3" class="form-text text-muted">Whether to use an encrypted connection
+                                to connected to the SMTP server.</small>
+                        </div>
+                        <div class="card-header">
+                            <div class="card-body">
+                                <legend>SMS AUTHENTICATION</legend>
+                                <small id="emailHelp3" class="form-text text-muted">Leave both fields empty, if your
+                                    SMS server does not require authentication</small>
+                                <div class="form-group">
+                                    <label for="inputMessage">Username</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp1" placeholder="ocied.asgas_jjsfyj">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputMessage">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp1" placeholder="password">
+                                    <small id="emailHelp3" class="form-text text-muted">Leave empty if you do not insted
+                                        to change the current password</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group pt-3">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

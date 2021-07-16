@@ -1,0 +1,156 @@
+<div class="row mt-3">
+  <div class="col-md-2"></div>
+  <div class="col-md-8 p-3 card">
+    <h1>New Email</h1>
+    <hr>
+    <form>
+<div class="form-group">
+  <label for="exampleInputPassword1">From</label>
+  <select class="js-example-basic-multiple form-select" name="states[]" multiple="multiple">
+    <optgroup label="Deptt. Names" id="types">
+      <option value="1">Private</option>
+      <option value="2">Public</option>
+      <option value="3">Govt</option>
+   </optgroup>
+   <optgroup label="Email">
+    <option value="WY">demo@gmail.com</option>
+    <option value="WY">demo1@gmail.com</option>
+    <option value="WY">demo2@gmail.com</option>
+    </optgroup>
+  </select>
+</div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Recipient(s)</label>
+        <div class="search">
+          <input class="form-control" #filterInput type="text" maxlength="20"
+            (keyup)='searchQueryOnDataSource($event)' />
+          <div class="autocomplete">
+            <ul #filterList class="sub-list" *ngIf="resultDataList">
+              <li *ngFor="let result of resultDataList" (click)="selectedResult(result)">
+                <img *ngIf="resultDataList.length !== 1" [src]='result?.flag' width="35" height="20">
+                <div *ngIf="resultDataList.length > 1" [innerHTML]='result?.name'></div>
+                <span *ngIf="resultDataList.length === 1" [innerHTML]='result?.name'></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button type="button" (click)="Addcc()" class="btn btn-light">Add CC</button>
+        <button type="button" class="btn btn-light">Add BCC</button>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Use Template</label>
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Select Template</option>
+          <option value="1">Template 1</option>
+          <option value="2">Template 2</option>
+          <option value="3">Template 3</option>
+        </select>
+      </div>
+
+      <div class="form-group d-flex flex-row">
+        <div class="form-group w-100">
+          <label for="exampleInputPassword1">Subject</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Subject">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Tokens</label>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Address</option>
+            <option value="1">Address Id</option>
+            <option value="2">City</option>
+            <option value="3">Country</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Html Format</label>
+        <ckeditor class="form-group" [editor]="Editor" [data]='template'></ckeditor>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Save As Template
+          </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Html Format</label>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                Attachment(s)
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                <div class="mb-3">
+                  <label for="formFile" class="form-label">Attach File</label>
+                  <input class="form-control" type="file" id="formFile">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion accordion-flush mt-1" id="emailFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="Schedule-head">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#Schedule-email" aria-expanded="false" aria-controls="flush-collapseOne">
+                Schedule Follow-up
+              </button>
+            </h2>
+            <div id="Schedule-email" class="accordion-collapse collapse" aria-labelledby="Schedule-head"
+              data-bs-parent="#emailFlushExample">
+              <div class="accordion-body">
+                <div class="form-group d-flex flex-row">
+                  <div class="form-group pr-3">
+                    <label for="exampleInputEmail1">Schedule Follow-up Activity</label>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Selecte Activity</option>
+                      <option value="1">Phone/Call</option>
+                      <option value="2">Meeting</option>
+                      <option value="3">Interview</option>
+                    </select>
+                  </div>
+                  <div class="form-group pr-3">
+                    <label for="exampleInputEmail1">Date</label>
+                    <input class="form-control" type="date">
+                  </div>
+                  <div class="form-group pr-3">
+                    <label for="exampleInputEmail1">Time</label>
+                    <input class="form-control" type="time">
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="formFile" class="form-label">Subject</label>
+                  <input class="form-control" type="text" id="formFile">
+                </div>
+                <div class="form-group pr-3">
+                  <label for="exampleInputEmail1">Assigned to</label>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Selecte Contact</option>
+                    <option value="1">Searching</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group d-flex flex-row">
+        <button type="submit" class="btn btn-primary mr-3">Send Email</button>
+        <button type="button" class="btn btn-primary">Cancle</button>
+
+      </div>
+    </form>
+  </div>
+  <div class="col-md-2"></div>
+</div>

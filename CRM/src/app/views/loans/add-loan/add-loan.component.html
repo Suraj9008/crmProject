@@ -1,0 +1,108 @@
+<div class="card p-3">
+    <form>
+        <legend class="mt-5 ml-3">Loan Notification</legend>
+        <div class="form-group">
+            <div class="form-check">
+                <label class="control-label" for="loan amount">Contact</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Select Contact</option>
+                    <option value="1">Contact 1</option>
+                    <option value="2">Contact 2</option>
+                    <option value="3">Contact 2</option>
+                  </select>
+            </div>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label" for="name">Financier</label>
+            <select class="form-select" aria-label="Default select example">
+                <option value="1" selected>Select Financier</option>
+                <option value="1">Financier 1</option>
+                <option value="2" selected>Financier 2</option>
+                <option value="3">Financier 3</option>
+              </select>
+        </div>
+        <div class="form-group d-flex flex-row card-body mt-0">
+            <div class="form-check mt-0">
+                <label class="control-label">Loan Type</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option value="Commercial" selected>Commercial</option>
+                    <option value="Real Estate">Real Estate</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Mortgage">Mortgage</option>
+                </select>
+            </div>
+            <div class="form-check">
+                <label class="control-label" for="loan amount">Loan Amount</label>
+                <input class="form-control" type="text" name="loan amount" placeholder="Enter Amount"/>
+            </div>
+        </div>
+        <legend class="pl-3 mt-0">Special Considerations</legend>
+        <div class="form-group d-flex flex-row card-body">
+            <div class="form-check">
+                <label class="form-check-label" for="down payment">EMI Ammount</label>
+                <input class="form-control" type="text" name="down payment" placeholder="Enter Amount"/>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label" for="name">Frequency</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option value="1">Weekly</option>
+                    <option value="2" selected>Fortnightly</option>
+                    <option value="3">Monthly</option>
+                  </select>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label" for="name">&nbsp;</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option value="1">Day</option>
+                    <option value="2" selected>Month</option>
+                    <option value="3">Year</option>
+                  </select>
+            </div>
+        </div>
+
+        <div class="form-group card-body">
+            <div class="form-check d-flex flex-row">
+                <div class="form-check">
+                    <label class="form-check-label" for="name">Send Before</label>
+                    <input class="form-control" type="number" min="0" max="30" name="name-of-cosigner"/>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label" for="name">&nbsp;</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option value="1">Day</option>
+                        <option value="2" selected>Month</option>
+                        <option value="3">Year</option>
+                      </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group card-body mt-0 pt-0 d-flex flex-row">
+            <div class="form-check">
+            <label class="form-check-label" for="occupation">Select Template:</label>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+            <div class="form-check pl-3">
+                <label class="form-check-label" for="occupation">Send Notification On:</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option value="1" selected>Both</option>
+                    <option value="1">SMS</option>
+                    <option value="2">Email</option>
+                  </select>
+                </div>
+        </div>
+        <div class="form-group pr-3 d-flex flex-row">
+            <div class="ui-select">
+                <button type="button" class="btn btn-secondary">Cancle</button>
+            </div>
+            <div class="ui-select pl-3">
+                <button type="submit" class="btn btn-primary">Submit Form</button>
+            </div>
+        </div> 
+    </form>
+</div>
